@@ -21,7 +21,7 @@ makeCacheMatrix<- function(y){
 cach <<-y
 }
 cacheSolve<-function(x) {
-if(!is.null(m) && (matequal(x,oldmat)))
+if((matequal(x,oldmat)))
 {
 message("getting cached data")
 return (cach)
@@ -29,9 +29,9 @@ return (cach)
 else
 {
 oldmat <<-x
-m <-solve(x)
-return (m)
-makeCacheMatrix(m)
+
+return (solve(x))
+makeCacheMatrix(solve(x))
 }
 }
   
